@@ -1,0 +1,83 @@
+.simulator-container {
+  background-color: #eee;
+  display: flex;
+  flex-flow: column;
+  padding: 24px;
+}
+
+.simulator-content {
+  display: flex;
+  width: 40%;
+  align-self: center;
+  justify-content: space-between;
+  margin: 56px 0px;
+}
+
+.simulator-box {
+  background-color: #ff4000;
+  padding: 24px;
+  border-radius: 16px;
+  color: white;
+}
+
+.simulator-line {
+  width: 400px;
+  border-bottom: 3px dotted #ff4000;
+}
+
+.simulator-package {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: black;
+  border-radius: 20px;
+  bottom: 49%;
+  left: 37%;
+  opacity: 0.5;
+  transition: all ease 1000ms;
+}
+
+.simulator-package-end {
+  left: 61%;
+  opacity: 1;
+}
+
+.simulator-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+input[type='range'] {
+  width: 35%;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  background-color: #ff4000;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ff4000;
+  border-radius: 50%;
+  margin-top: -9px;
+}
+
+input[type='range']::-moz-range-thumb {
+  background-color: #ff4000;
+}
+
+input[type='range']::-ms-thumb {
+  background-color: #ff4000;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  background-color: #ff4000;
+  height: 3px;
+}

@@ -1,7 +1,23 @@
-<section>
+<section class="simulator-container">
   <h1>Send Request Simulator</h1>
-  <form phx-change="change_form">
-    <input type="range" name="ms" value="<%= @ms %>" min="100" max="1000" step="100"/>
-    <p><%= @ms %></p>
+  <div class="simulator-content">
+    <div class="simulator-box">Client</div>
+    <div class="simulator-package <%= has_finished_class(@has_finished) %>">
+    </div>
+    <hr class="simulator-line" />
+    <div class="simulator-box">Server</div>
+  </div>
+  <form class="simulator-form"  phx-change="change_form">
+    <input
+      type="range"
+      class="simulator-range"
+      name="ms"
+      value="<%= @ms %>"
+      min="100"
+      max="1000"
+      step="100"
+    />
+    <p>send a reques each <%= @ms %> miliseconds</p>
   </form>
+  <button phx-click="init">Init Request</button>
 </section>
