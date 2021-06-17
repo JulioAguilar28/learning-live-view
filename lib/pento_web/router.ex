@@ -19,6 +19,7 @@ defmodule PentoWeb.Router do
 
     live "/", PageLive, :index
     live "/guess", WrongLive
+    live "/simulator", SimulatorLive
   end
 
   # Other scopes may use custom stacks.
