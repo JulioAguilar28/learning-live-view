@@ -29,16 +29,22 @@
   position: absolute;
   height: 25px;
   width: 25px;
-  background-color: black;
+  background-color: #ff4000;
   border-radius: 20px;
   bottom: 49%;
-  left: 37%;
-  opacity: 0.5;
+  opacity: 0;
+  animation-name: send-package;
+  animation-duration: 2s;
 }
 
-.simulator-package-end {
-  left: 61%;
-  opacity: 1;
+@keyframes send-package {
+  0% {
+    left: 37%;
+    opacity: 1;
+  }
+  50% {
+    left: 61%;
+  }
 }
 
 .simulator-form {

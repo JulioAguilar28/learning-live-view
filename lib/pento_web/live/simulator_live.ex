@@ -2,22 +2,24 @@ defmodule PentoWeb.SimulatorLive do
   use Phoenix.LiveView
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, ms: 500, has_finished: false)}
+    Process.send_after(self(), :update, 500)
+
+    {:ok, assign(socket, ms: 500, init_request: true, requests: [1])}
+  end
+
+  def handle_info(:update, socket) do
+    Process.send_after(self(), :reset, socket.assigns.ms)
+
+    {:noreply, assign(socket, init_request: true, requests: [1 | socket.assigns.requests])}
+  end
+
+  def handle_info(:reset, socket) do
+    Process.send_after(self(), :update, socket.assigns.ms)
+
+    {:noreply, assign(socket, init_request: false)}
   end
 
   def handle_event("change_form", %{"ms" => ms}, socket) do
-    {:noreply, assign(socket, ms: ms, has_finished: false)}
-  end
-
-  def handle_event("init", _params, socket) do
-    {:noreply, assign(socket, has_finished: true)}
-  end
-
-  def has_finished_class(has_finished) do
-    if has_finished == true, do: "simulator-package-end"
-  end
-
-  def delay(ms, delay_time) do
-    ms * delay_time
+    {:noreply, assign(socket, ms: String.to_integer(ms))}
   end
 end
