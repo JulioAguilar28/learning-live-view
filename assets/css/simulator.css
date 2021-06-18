@@ -31,7 +31,7 @@
   width: 25px;
   background-color: #ff4000;
   border-radius: 20px;
-  bottom: 49%;
+  top: 315px;
   opacity: 0;
   animation-name: send-package;
   animation-duration: 2s;
