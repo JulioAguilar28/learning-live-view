@@ -13,11 +13,11 @@ defmodule PentoWeb.SimulatorLive do
     {:noreply, assign(socket, has_finished: true)}
   end
 
-  def handle_event("change_status", %{"has_finished" => has_finished}, socket) do
-    {:noreply, assign(socket, has_finished: has_finished)}
-  end
-
   def has_finished_class(has_finished) do
     if has_finished == true, do: "simulator-package-end"
+  end
+
+  def delay(ms, delay_time) do
+    ms * delay_time
   end
 end

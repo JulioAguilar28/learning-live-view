@@ -34,7 +34,6 @@
   bottom: 49%;
   left: 37%;
   opacity: 0.5;
-  transition: all ease 1000ms;
 }
 
 .simulator-package-end {
@@ -48,6 +47,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.simulator-list {
+  display: flex;
+  justify-content: space-between;
+  width: 38%;
 }
 
 input[type='range'] {

@@ -2,7 +2,11 @@
   <h1>Send Request Simulator</h1>
   <div class="simulator-content">
     <div class="simulator-box">Client</div>
-    <div class="simulator-package <%= has_finished_class(@has_finished) %>">
+    <div
+      class="simulator-package
+      <%= has_finished_class(@has_finished) %>"
+      style="transition: all ease <%= @ms %>ms"
+    >
     </div>
     <hr class="simulator-line" />
     <div class="simulator-box">Server</div>
@@ -17,7 +21,12 @@
       max="1000"
       step="100"
     />
-    <p>send a reques each <%= @ms %> miliseconds</p>
+    <div class="simulator-list">
+      <div>100ms</div>
+      <div style="margin-right: 24px">500ms</div>
+      <div>1000ms</div>
+    </div>
+    <p style="margin-top: 56px">send a reques each <%= @ms %> miliseconds</p>
   </form>
   <button phx-click="init">Init Request</button>
 </section>
